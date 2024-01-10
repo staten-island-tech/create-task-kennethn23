@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+
+body {
+    font-family: 'Kanit', sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.playButton {
+    padding: 10px;
+    margin: auto;
+    border-radius: 10px;
+    border-width: 1px;
+}
