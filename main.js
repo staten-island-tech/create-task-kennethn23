@@ -86,7 +86,8 @@ function getHistory () {
     }
 
     DOMSelectors.history.insertAdjacentHTML("afterbegin",
-        `<h2>Wins: ${win} | Losses: ${lose} | Draws: ${draw}</h2>`)
+        `<h2>Win Rate: ${((win / (win + lose + draw)) * 100).toString().substring(0, 4)}%</h2>
+        <h3>Wins: ${win} | Losses: ${lose} | Draws: ${draw}</h3>`)
 };
 
 DOMSelectors.rock.addEventListener("click", function () {
