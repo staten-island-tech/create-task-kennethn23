@@ -59,7 +59,7 @@ function rockPaperScissors (input) {
 
     DOMSelectors.history.innerHTML = "";
     DOMSelectors.content.insertAdjacentHTML("afterbegin", 
-    `<p>Your choice: ${returnInput().toUpperCase()}</p>
+    `<p>Your choice: ${returnInput(input).toUpperCase()}</p>
     <p>Opponent choice: ${opponentChoice.toUpperCase()}</p>
     <h4>${outcome.toUpperCase()}</h4>
     `)
