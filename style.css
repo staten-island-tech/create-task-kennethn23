@@ -1,16 +1,88 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
 
+:root {
+    --gradientGray1: #363636;
+    --gradientGray2: #313238;
+    --gradientGray3: #27282e;
+    --gradientGray4: #17171c;
+    --redTransp: rgba(255, 87, 87, 0.192);
+    --green: rgb(126, 255, 87);
+    --greenTransp: rgba(126, 255, 87, 0.192);
+    --yellowTransp: rgba(255, 238, 87, 0.192);
+    --yellow: #ffe15c;
+    --yellow2: #ffe72e;
+    --yellow3: #fff200;
+    --content: rgba(0, 0, 0, 0.15);
+    --content2: rgba(255, 255, 255, 0.15);
+
+    --h1: 3.375rem;
+    --h2: 2.25rem;
+    --h3: 1.5rem;
+    --h4: 1.17rem;
+    --h5: 0.5rem;
+}
+
 body {
-    font-family: 'Kanit', sans-serif;
     display: flex;
-    align-items: center;
-    flex-direction: column;
+    margin: auto;
+    background: linear-gradient(to bottom right, var(--gradientGray1), var(--gradientGray2), var(--gradientGray3), var(--gradientGray4));
+    color: white;
+    font-family: 'Kanit', sans-serif;
     text-align: center;
+    flex-direction: column;
 }
 
 .playButton {
+    border-width: 0;
+    border-radius: 20px;
     padding: 10px;
     margin: auto;
-    border-radius: 10px;
-    border-width: 1px;
+}
+
+#win {
+    background-color: var(--greenTransp);
+    border-radius: 40px;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    margin-top: 20px;
+    margin-right: 20px;
+    width: 13%;
+}
+
+#lose {
+    background-color: var(--redTransp);
+    border-radius: 40px;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    margin-top: 20px;
+    margin-right: 20px;
+    width: 13%;
+}
+
+#draw {
+    background-color: var(--yellowTransp);
+    border-radius: 40px;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    margin-top: 20px;
+    margin-right: 20px;
+    width: 13%;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }

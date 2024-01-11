@@ -55,13 +55,15 @@ function rockPaperScissors (input) {
             outcome = "draw";
         }
     }
-    history.push(outcome.toUpperCase());
+    history.push(outcome);
 
     DOMSelectors.history.innerHTML = "";
     DOMSelectors.content.insertAdjacentHTML("afterbegin", 
-    `<p>Your choice: ${returnInput(input).toUpperCase()}</p>
+    `<div class="card" id="${outcome}">
+    <p>Your choice: ${returnInput(input).toUpperCase()}</p>
     <p>Opponent choice: ${opponentChoice.toUpperCase()}</p>
     <h4>${outcome.toUpperCase()}</h4>
+    </div>
     `)
 };
 
@@ -73,20 +75,23 @@ function getHistory () {
     let draw = 0;
 
     for (let i = 0; i < history.length; i++) {
-        if (history[i] == "WIN") {
+        if (history[i] == "win") {
             win++;
-        } else if (history[i] == "LOSE") {
+        } else if (history[i] == "lose") {
             lose++;
         } else {
             draw++;
         }
 
         DOMSelectors.history.insertAdjacentHTML("afterbegin",
-        `<h4>Game ${i + 1}: ${history[i]}</h4>`)
+        `<div id="${history[i]}">
+        <h4>Game ${i + 1}: ${history[i].toUpperCase()}</h4>
+        </div>`)
     }
 
     DOMSelectors.history.insertAdjacentHTML("afterbegin",
-        `<h2>Win Rate: ${((win / (win + lose + draw)) * 100).toString().substring(0, 4)}%</h2>
+        `
+        <h2>Win Rate: ${((win / (win + lose + draw)) * 100).toString().substring(0, 5)}%</h2>
         <h3>Wins: ${win} | Losses: ${lose} | Draws: ${draw}</h3>`)
 };
 
