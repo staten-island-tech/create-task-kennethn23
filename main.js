@@ -84,7 +84,7 @@ function getHistory () {
         }
 
         DOMSelectors.history.insertAdjacentHTML("afterbegin",
-        `<div id="${history[i]}">
+        `<div class="historyCard" id="${history[i]}">
         <h4>Game ${i + 1}: ${history[i].toUpperCase()}</h4>
         </div>`)
     }

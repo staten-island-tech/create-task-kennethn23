@@ -41,48 +41,47 @@ body {
 
 #win {
     background-color: var(--greenTransp);
-    border-radius: 40px;
+    border-radius: 50px;
     display: flex;
     margin: auto;
     flex-direction: column;
     align-items: center;
     color: white;
     margin-top: 20px;
-    margin-right: 20px;
-    width: 13%;
+    padding: 20px;
 }
 
 #lose {
     background-color: var(--redTransp);
-    border-radius: 40px;
+    border-radius: 50px;
     display: flex;
     margin: auto;
     flex-direction: column;
     align-items: center;
     color: white;
     margin-top: 20px;
-    margin-right: 20px;
-    width: 13%;
+    padding: 20px;
 }
 
 #draw {
     background-color: var(--yellowTransp);
-    border-radius: 40px;
+    border-radius: 50px;
     display: flex;
     margin: auto;
     flex-direction: column;
     align-items: center;
     color: white;
     margin-top: 20px;
-    margin-right: 20px;
-    width: 13%;
+    padding: 20px;
 }
 
 .content {
     display: flex;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
     margin: auto;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+}
+
+.historyCard {
+    width: 25%;
 }
