@@ -23,12 +23,21 @@ function returnInput (input) {
 };
 
 function rockPaperScissors (input) {
-    const random = Math.floor(Math.random() * 3);
+    const random = Math.floor(Math.random() * 100);
     let opponentChoice;
     let outcome;
 
-    if (random == 0) {
-        opponentChoice = "rock";
+    for (let i = 0; i <= random; i++) {
+        if (i % 3 == 0) {
+            opponentChoice = "rock";
+        } else if (i % 2 == 0) {
+            opponentChoice = "paper";
+        } else {
+            opponentChoice = "scissors";
+        }
+    }
+
+    if (opponentChoice == "rock") {
         if (input == 1) {
             outcome = "win";
         } else if (input == 2) {
@@ -36,8 +45,7 @@ function rockPaperScissors (input) {
         } else {
             outcome = "draw";
         }
-    } else if (random == 1) {
-        opponentChoice = "paper";
+    } else if (opponentChoice == "paper") {
         if (input == 2) {
             outcome = "win";
         } else if (input == 0) {
@@ -45,8 +53,7 @@ function rockPaperScissors (input) {
         } else {
             outcome = "draw";
         }
-    } else if (random == 2) {
-        opponentChoice = "scissors";
+    } else {
         if (input == 0) {
             outcome = "win";
         } else if (input == 1) {
@@ -58,6 +65,10 @@ function rockPaperScissors (input) {
     history.push(outcome);
 
     DOMSelectors.history.innerHTML = "";
+    console.log(random);
+    console.log(input);
+    console.log(outcome);
+    console.log(opponentChoice);
     DOMSelectors.content.insertAdjacentHTML("afterbegin", 
     `<div class="card" id="${outcome}">
     <p>Your choice: ${returnInput(input).toUpperCase()}</p>
@@ -90,8 +101,7 @@ function getHistory () {
     }
 
     DOMSelectors.history.insertAdjacentHTML("afterbegin",
-        `
-        <h2>Win Rate: ${((win / (win + lose + draw)) * 100).toString().substring(0, 5)}%</h2>
+        `<h2>Win Rate: ${((win / (win + lose + draw)) * 100).toString().substring(0, 5)}%</h2>
         <h3>Wins: ${win} | Losses: ${lose} | Draws: ${draw}</h3>`)
 };
 
@@ -109,4 +119,4 @@ DOMSelectors.scissors.addEventListener("click", function () {
 
 DOMSelectors.historyButton.addEventListener("click", function () {
     getHistory();
-})
+});
