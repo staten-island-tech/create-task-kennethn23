@@ -65,10 +65,6 @@ function rockPaperScissors (input) {
     history.push(outcome);
 
     DOMSelectors.history.innerHTML = "";
-    console.log(random);
-    console.log(input);
-    console.log(outcome);
-    console.log(opponentChoice);
     DOMSelectors.content.insertAdjacentHTML("afterbegin", 
     `<div class="card" id="${outcome}">
     <p>Your choice: ${returnInput(input).toUpperCase()}</p>
